@@ -7,7 +7,7 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
 
-dataset_dir = pathlib.Path("Images")
+dataset_dir = pathlib.Path("path_to_folder")
 
 batch_size = 32
 img_width = 180
@@ -57,7 +57,7 @@ model.compile(
 	loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
 	metrics=['accuracy'])
 
-model.load_weights("my_dogs_model")
+model.load_weights("model_name")
 
 loss, acc = model.evaluate(train_ds, verbose=2)
 print("Restored model, accurancy: {:5.2f}%".format(100*acc))
